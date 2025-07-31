@@ -41,7 +41,7 @@ export default function UserAddForm() {
         }}
         onSubmit={(val) => {
           dispatch(addUser({ ...val, id: nanoid() }));
-          // nav(-1);
+          nav(-1);
           console.log(val);
         }}
         validationSchema={valSchema}

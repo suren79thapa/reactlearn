@@ -6,6 +6,7 @@ import NotFound from "./notfound/NotFound";
 import RootLayOut from "./components/RootLayOut";
 import UserList from "./features/users/UserList";
 import UserAddForm from "./features/users/UserAddForm";
+import UserUpdateForm from "./features/users/UserUpdateForm";
 export default function App() {
   const router = createBrowserRouter([
     {
@@ -19,6 +20,10 @@ export default function App() {
         {
           path: "add-form",
           element: <UserAddForm />,
+        },
+        {
+          path: "update-form/:id",
+          element: <UserUpdateForm />,
         },
       ],
     },

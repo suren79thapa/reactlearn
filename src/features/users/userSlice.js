@@ -9,11 +9,16 @@ export const userSlice = createSlice({
       state.users.push(action.payload);
       setToLocal(state.users);
     },
-    updateUser: (state, action) => {},
-    removeUsers: (state, action) => {
+    updateUser: (state, action) => {
+      state.users = state.users.map((user) => {
+        return user.id === action.payload.id ? action.payload : user;
+      });
+      setToLocal(state.users);
+    },
+    removeUser: (state, action) => {
       state.users.splice(action.payload, 1);
       setToLocal(state.users);
     },
   },
 });
-export const { addUser } = userSlice.actions;
+export const { addUser, updateUser, removeUser } = userSlice.actions;
