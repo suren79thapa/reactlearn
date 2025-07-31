@@ -42,13 +42,24 @@ export default function UserAddForm() {
         onSubmit={(val) => {
           dispatch(addUser({ ...val, id: nanoid() }));
           // nav(-1);
-          // console.log(val);
+          console.log(val);
         }}
+        validationSchema={valSchema}
       >
-        {({ handleChange, handleSubmit, values }) => (
+        {({
+          handleChange,
+          handleSubmit,
+          values,
+          errors,
+          touched,
+          setFieldValue,
+        }) => (
           <form onSubmit={handleSubmit} className="max-w-[400px] space-y-4">
             <div>
               <Input onChange={handleChange} label="Username" name="username" />
+              {errors.username && touched.username && (
+                <h1 className="text-pink-700">{errors.username}</h1>
+              )}
             </div>
             <div>
               <Input
@@ -57,6 +68,9 @@ export default function UserAddForm() {
                 name="email"
                 type="email"
               />
+              {errors.email && touched.email && (
+                <h1 className="text-pink-700">{errors.email}</h1>
+              )}
             </div>
             <div>
               <Typography>Select Your habits</Typography>
@@ -72,6 +86,9 @@ export default function UserAddForm() {
                 value={"sing"}
                 name="habits"
               />
+              {errors.habits && touched.habits && (
+                <h1 className="text-pink-700">{errors.habits}</h1>
+              )}
             </div>
             <div>
               <Typography>Select your gender</Typography>
@@ -87,21 +104,32 @@ export default function UserAddForm() {
                 value={"female"}
                 name="gender"
               />
+              {errors.gender && touched.gender && (
+                <h1 className="text-pink-700">{errors.gender}</h1>
+              )}
             </div>
             <div>
               <Typography>Select your country</Typography>
-              <Select label="select country" name="country">
+              <Select
+                label="select country"
+                name="country"
+                onChange={(e) => {
+                  setFieldValue("country", e);
+                }}
+              >
                 <Option value="nepal">Nepal</Option>
                 <Option value="india">India</Option>
                 <Option value="china">china</Option>
               </Select>
+              {errors.country && touched.country && (
+                <h1 className="text-pink-700">{errors.country}</h1>
+              )}
             </div>
             <div>
-              <Textarea
-                label="Bio"
-                name="bio"
-                onChange={handleChange}
-              ></Textarea>
+              <Textarea label="Bio" name="bio" onChange={handleChange} />
+              {errors.bio && touched.bio && (
+                <h1 className="text-pink-700">{errors.bio}</h1>
+              )}
             </div>
             <Button type="submit">Submit</Button>
           </form>
