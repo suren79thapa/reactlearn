@@ -7,6 +7,7 @@ import RootLayOut from "./components/RootLayOut";
 import UserList from "./features/users/UserList";
 import UserAddForm from "./features/users/UserAddForm";
 import UserUpdateForm from "./features/users/UserUpdateForm";
+import ArticleList from "./features/articles/ArticleList";
 export default function App() {
   const router = createBrowserRouter([
     {
@@ -15,15 +16,7 @@ export default function App() {
       children: [
         {
           index: true,
-          element: <UserList />,
-        },
-        {
-          path: "add-form",
-          element: <UserAddForm />,
-        },
-        {
-          path: "update-form/:id",
-          element: <UserUpdateForm />,
+          element: <ArticleList />,
         },
       ],
     },
