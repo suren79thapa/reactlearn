@@ -5,6 +5,7 @@ import { RouterProvider } from "react-router-dom";
 import NotFound from "./notfound/NotFound";
 import RootLayOut from "./components/RootLayOut";
 import ArticleList from "./features/articles/ArticleList";
+import AddArticleForm from "./features/articles/AddArticleForm";
 export default function App() {
   const router = createBrowserRouter([
     {
@@ -14,6 +15,10 @@ export default function App() {
         {
           index: true,
           element: <ArticleList />,
+        },
+        {
+          path: "add-article",
+          element: <AddArticleForm />,
         },
       ],
     },
