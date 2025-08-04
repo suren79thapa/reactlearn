@@ -15,7 +15,11 @@ export default function ArticleList() {
         data.map((article) => {
           return (
             <div key={article.id} className="p-3 space-y-3">
-              <img src={article.image} alt="profile" className="h-[200px]" />
+              <img
+                src={article.image}
+                alt="profile"
+                className="h-[200px] w-[250px]"
+              />
               <h1>{article.title}</h1>
               <p>{article.detail}</p>
               <RemoveArticle id={article.id} />
