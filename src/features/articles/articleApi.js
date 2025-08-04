@@ -12,6 +12,7 @@ export const articleApi = createApi({
         url: "/articles",
         method: "GET",
       }),
+      providesTags: ["Articles"],
     }),
     createArticle: builder.mutation({
       query: (data) => ({
@@ -19,6 +20,14 @@ export const articleApi = createApi({
         body: data,
         method: "POST",
       }),
+      invalidatesTags: ["Articles"],
+    }),
+    removeArticle: builder.mutation({
+      query: (id) => ({
+        url: `/articles/${id}`,
+        method: "DELETE",
+      }),
+      invalidatesTags: ["Articles"],
     }),
   }),
 });
@@ -26,4 +35,5 @@ export const {
   useGetArticlesQuery,
   useCreateArticleMutation,
   useLazyGetArticlesQuery,
+  useRemoveArticleMutation,
 } = articleApi;

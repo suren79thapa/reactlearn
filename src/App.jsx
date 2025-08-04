@@ -6,6 +6,8 @@ import NotFound from "./notfound/NotFound";
 import RootLayOut from "./components/RootLayOut";
 import ArticleList from "./features/articles/ArticleList";
 import AddArticleForm from "./features/articles/AddArticleForm";
+import AddCocktailList from "./features/cocktail/AddCocktailList";
+import CategoryCotailList from "./features/cocktail/CategoryCotailList";
 export default function App() {
   const router = createBrowserRouter([
     {
@@ -19,6 +21,14 @@ export default function App() {
         {
           path: "add-article",
           element: <AddArticleForm />,
+        },
+        {
+          path: "get-cocktail",
+          element: <AddCocktailList />,
+        },
+        {
+          path: "cocktailcat",
+          element: <CategoryCotailList />,
         },
       ],
     },
