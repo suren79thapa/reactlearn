@@ -22,13 +22,14 @@ export default function App() {
           path: "add-article",
           element: <AddArticleForm />,
         },
-        {
-          path: "get-cocktail",
-          element: <AddCocktailList />,
-        },
+
         {
           path: "cocktailcat",
           element: <CategoryCotailList />,
+        },
+        {
+          path: "cocktailcat/:category",
+          element: <AddCocktailList />,
         },
       ],
     },

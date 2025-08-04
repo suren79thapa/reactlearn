@@ -4,10 +4,12 @@ import {
   CardHeader,
   Typography,
 } from "@material-tailwind/react";
-import { useGetCocktailQuery } from "./cocktailApi";
+import { useGetCocktailsByCategoryQuery } from "./cocktailApi";
+import { useParams } from "react-router";
 
 export default function AddCocktailList() {
-  const { isLoading, error, data } = useGetCocktailQuery();
+  const { category } = useParams();
+  const { isLoading, error, data } = useGetCocktailsByCategoryQuery(category);
   // const [getArticles, { isLoading, data, error }] = useLazyGetArticlesQuery();
 
   if (isLoading) return <h1>Loading....</h1>;
