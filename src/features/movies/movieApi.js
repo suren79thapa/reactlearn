@@ -16,6 +16,17 @@ export const movieApi = createApi({
         method: "GET",
       }),
     }),
+    getPopularMovies: builder.query({
+      query: (page) => ({
+        url: "/movie/popular",
+        params: {
+          api_key: "0b47ed5205ac3e480099d056fab0945c",
+          // the page we think is not getting the value that is page
+          page,
+        },
+        method: "GET",
+      }),
+    }),
     searchMovie: builder.query({
       query: (q) => ({
         url: "/search/movie",
@@ -25,4 +36,8 @@ export const movieApi = createApi({
     }),
   }),
 });
-export const { useGetNowPlayingMoviesQuery, useSearchMovieQuery } = movieApi;
+export const {
+  useGetNowPlayingMoviesQuery,
+  useSearchMovieQuery,
+  useGetPopularMoviesQuery,
+} = movieApi;

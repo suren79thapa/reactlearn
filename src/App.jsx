@@ -3,6 +3,8 @@ import { RouterProvider } from "react-router-dom";
 import NotFound from "./notfound/NotFound";
 import RootLayOut from "./components/RootLayOut";
 import Home from "./Home";
+import MovieSearch from "./features/movies/MovieSearch";
+import PopularMovie from "./features/movies/PopularMovie";
 export default function App() {
   const router = createBrowserRouter([
     {
@@ -12,6 +14,14 @@ export default function App() {
         {
           index: true,
           element: <Home />,
+        },
+        {
+          path: "movie-search",
+          element: <MovieSearch />,
+        },
+        {
+          path: "popular-movie",
+          element: <PopularMovie />,
         },
       ],
     },
