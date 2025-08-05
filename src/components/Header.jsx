@@ -8,10 +8,6 @@ function Header() {
           Redux Toolkit
         </h1>
       </Link>
-      <nav className="space-x-7">
-        <NavLink to={"/add-article"}>Create Article</NavLink>
-        <NavLink to={"/cocktailcat"}> cocktail-category</NavLink>
-      </nav>
     </div>
   );
 }
