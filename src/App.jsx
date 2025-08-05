@@ -16,11 +16,7 @@ export default function App() {
     phone: "ncel",
     age: 45,
   };
-  const userObject3 = {
-    locality: "chitwan",
-    phone: "gio",
-    age: 90,
-  };
+
   // const arr = [45, 67, 89, 34];
   // aba euta state variable banauchu
   const [data, setData] = useState("");
@@ -31,7 +27,7 @@ export default function App() {
       {/* the above thing is like doing something manually */}
       <User user={userObject1} />
       <User user={userObject2} />
-      <User user={userObject3} />
+
       <Button onClick={() => setData("bhaskar")}>change_name</Button>
       {data && <Student name={data} />}
     </div>
