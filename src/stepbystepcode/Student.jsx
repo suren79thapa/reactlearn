@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Student({ name }) {
+export default function Student({ name = "user" }) {
   return (
     <div>
       <hr />
